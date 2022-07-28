@@ -12,6 +12,7 @@ app.use(auth);
 
 app.use('/api/auth/check_token', require('./auth/check_token'));
 app.use('/api/login', require('./login'));
+app.use('/api/register', require('./register'));
 app.use('/api/meeting', require('./meeting'));
 app.use('/api/meeting/all', require('./meeting/all'));
 app.use('/api/user', require('./user'));
