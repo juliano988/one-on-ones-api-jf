@@ -37,7 +37,7 @@ router.delete('/', passport.authenticate('jwt', { session: false }), (req, res) 
     if (err) { return res.status(500).json({ message: 'Internal error.', err: err }) }
 
     MeetingModel.deleteMany({ _id: { $in: data._id_meeting } }, function (data, err) {
-      if (err) { return res.status(500).json({ message: 'Internal error.', err: err }) }
+      if (err && !err.hasOwnProperty('deletedCount')) { return res.status(500).json({ message: 'Internal error.', err: err }) }
 
       res.status(204).send();
 
