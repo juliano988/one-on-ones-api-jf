@@ -18,6 +18,6 @@ app.use('/api/meeting/all', require('./meeting/all'));
 app.use('/api/user', require('./user'));
 app.use('/api/user/all', require('./user/all'));
 
-app.listen(4000, () => {
+app.listen(process.env.PORT || 4000, () => {
   console.log(`Example app listening on port 4000`)
 })
